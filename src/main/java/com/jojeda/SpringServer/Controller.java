@@ -28,15 +28,15 @@ public class Controller {
             @RequestParam(value = "nombre", defaultValue = "nada") String nombre,
             @RequestParam(value = "descripcion", defaultValue = "nada") String descripcion,
             @RequestParam(value = "precio", defaultValue = "0") float precio,
-            @RequestParam(value = "x", defaultValue = "0") float x,
-            @RequestParam(value = "y", defaultValue = "0") float y) {
+            @RequestParam(value = "latitud", defaultValue = "0") float latitud,
+            @RequestParam(value = "longitud", defaultValue = "0") float longitud) {
 
         Evento evento = new Evento();
         evento.setNombre(nombre);
         evento.setDescripcion(descripcion);
         evento.setPrecio(precio);
-        evento.setX(x);
-        evento.setY(y);
+        evento.setLatitud(latitud);
+        evento.setLongitud(longitud);
         repository.save(evento);
     }
 

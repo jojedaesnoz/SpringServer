@@ -1,10 +1,11 @@
 package com.jojeda.SpringServer;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "eventos")
-public class Evento {
+public class Evento implements Serializable {
 
     @Id
     @GeneratedValue
@@ -19,11 +20,11 @@ public class Evento {
     @Column(name = "precio")
     private float precio;
 
-    @Column(name = "x")
-    private double x;
+    @Column(name = "latitud")
+    private double latitud;
 
-    @Column(name = "y")
-    private double y;
+    @Column(name = "longitud")
+    private double longitud;
 
 
     public long getId() {
@@ -50,20 +51,20 @@ public class Evento {
         this.descripcion = descripcion;
     }
 
-    public double getX() {
-        return x;
+    public double getLatitud() {
+        return latitud;
     }
 
-    public void setX(double x) {
-        this.x = x;
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
     }
 
-    public double getY() {
-        return y;
+    public double getLongitud() {
+        return longitud;
     }
 
-    public void setY(double y) {
-        this.y = y;
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
     }
 
     public float getPrecio() {
